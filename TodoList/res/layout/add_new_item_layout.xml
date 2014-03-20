@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_new_item_title"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        android:inputType="text" />
+
+    <DatePicker
+        android:id="@+id/dp_new_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_new_item_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dp_new_item_date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+</RelativeLayout>
