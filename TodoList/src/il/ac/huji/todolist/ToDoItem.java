@@ -1,41 +1,36 @@
 package il.ac.huji.todolist;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+import com.parse.ParseObject;
 
 public class ToDoItem {
-	Calendar _itemDate;
+	long _itemDate;
 	String _itemText;
+	ParseObject _object;
+	String _objectId;
 
-	public ToDoItem(Calendar inDate, String inText) {
-		_itemDate = inDate;
-		_itemText = inText;
+	public ToDoItem(String txt, long date) {
+		_itemDate = date;
+		_itemText = txt;
 	}
 
-	public Calendar getItemDate() {
-		return _itemDate;
+	public ToDoItem(ParseObject obj, String id) {
+		_object = obj;
+		_objectId = id;
 	}
 
-	public String getItemText() {
+	public String getObjId() {
+		return _objectId;
+	}
+
+	public ParseObject getParseObj() {
+		return _object;
+	}
+
+	public String getText() {
 		return _itemText;
 	}
 
-	public String getDateInStringText() {
-		return getDate();
-	}
-
-	private String getDate() {
-		// Create a DateFormatter object for displaying date in specified
-		// format.
-		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", new Locale(
-				"he"));
-
-		// Create a calendar object that will convert the date and time value in
-		// milliseconds to date.
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(_itemDate.getTimeInMillis());
-		return formatter.format(calendar.getTime());
+	public long getDate() {
+		return _itemDate;
 	}
 }
